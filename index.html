@@ -3,9 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="./style/bootstrap.min.css">
+  
+
+  <title>Weather App</title>
 </head>
 <body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto text-center bg-primary mt-5 p-5 rounded">
+        <h1 id="w-location"></h1>
+        <h3 id="w-desc" class="text-dark"></h3>
+        <h3 id="w-string"></h3>
+        <img id="w-icon">
+        <ul class="list-group mt-3" id="w-details">
+          <li id="w-humidity" class="list-group-item"></li>
+          <li id="w-dewpoint" class="list-group-item"></li>
+          <li id="w-feels-like" class="list-group-item"></li>
+          <li id="w-wind" class="list-group-item"></li>
+          <li id="w-temp" class="list-group-item"></li>
+        </ul>
+        <hr>
+
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#locationModal">
+  Change Location
+</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="locationModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="locationModalLabel">Choose Location</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form id="w-form">
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" id="state" class="form-control">
+          </div>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" id="w-change-btn" class="btn btn-primary">Change Location</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
   
+  <script src="./style/jquery-3.5.1.slim.min.js"></script>
+  <script src="./style/popper.min.js"></script>
+  <script src="./style/jquery-3.5.1.slim.min.js"></script>
+  <script src="./style/bootstrap.min.js"></script>
+
+  <script src="app.js"></script>
+  <script src="ui.js"></script>
+  <script src="local-storage.js"></script>
+  <script src="weather.js"></script>
 </body>
 </html>
