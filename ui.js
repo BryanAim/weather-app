@@ -1,13 +1,13 @@
 class UI {
   constructor() {
-    this.location = document.getElementById('w-location');
-    this.desc = document.getElementById('w-desc');
-    this.icon = document.getElementById('w-icon');
+    this.location  = document.getElementById('w-location');
+    this.desc      = document.getElementById('w-desc');
+    this.icon      = document.getElementById('w-icon');
     this.feelsLike = document.getElementById('w-feels-like');
-    this.humidity = document.getElementById('w-humidity');
-    this.details = document.getElementById('w-details');
-    this.temp = document.getElementById('w-temp');
-    this.wind = document.getElementById('w-wind');
+    this.humidity  = document.getElementById('w-humidity');
+    this.details   = document.getElementById('w-details');
+    this.temp      = document.getElementById('w-temp');
+    this.wind      = document.getElementById('w-wind');
   }
 
   feed(weather) {
