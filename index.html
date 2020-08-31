@@ -15,19 +15,18 @@
     <div class="row">
       <div class="col-md-6 mx-auto text-center bg-primary mt-5 p-5 rounded">
         <h1 id="w-location"></h1>
-        <img id="w-icon">
+        <img id="w-icon"> <span id="w-temp" class="h4"></span>
         <h3 id="w-desc" class="text-dark"></h3>
         
         <ul class="list-group mt-3" id="w-details">
           <li id="w-humidity" class="list-group-item"></li>
-          <li id="w-temp" class="list-group-item"></li>
           <li id="w-feels-like" class="list-group-item"></li>
           <li id="w-wind" class="list-group-item"></li>
         </ul>
         <hr>
 
         <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#locationModal">
+<button type="button" class="btn btn-light" data-toggle="modal" data-target="#locationModal">
   Change Location
 </button>
       </div>
@@ -52,8 +51,8 @@
             <input type="text" id="city" class="form-control">
           </div>
           <div class="form-group">
-            <label for="state">State</label>
-            <input type="text" id="state" class="form-control">
+            <label for="state">Country</label>
+            <input type="text" id="state" class="form-control" placeholder="Optional">
           </div>
         </form>
 
@@ -71,9 +70,9 @@
   <script src="./style/popper.min.js"></script>
   <script src="./style/jquery-3.5.1.slim.min.js"></script>
   <script src="./style/bootstrap.min.js"></script>
-  <script src="weather.js"></script>
-</body>
-  <script src="ui.js"></script>
   <script src="local-storage.js"></script>
+  <script src="weather.js"></script>
+  <script src="ui.js"></script>
   <script src="app.js"></script>
+</body>
 </html>

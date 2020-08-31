@@ -14,9 +14,10 @@ class UI {
     this.location.textContent = `${weather.name}, ${weather.sys.country}`;
     this.desc.textContent = weather.weather[0].description;
     this.icon.setAttribute('src',`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`)
-    this.feelsLike.textContent = `Feels like: ${weather.main.feels_like}`;
-    this.humidity.textContent = `Humidity: ${weather.main.humidity}`;
+    this.feelsLike.textContent = `Feels like: ${(Number(weather.main.feels_like)-273.15).toFixed(2)}°C`;
+    this.humidity.textContent = `Humidity: ${weather.main.humidity} %`;
     this.wind.textContent = `Wind Speed: ${weather.wind.speed} m/s, at a ${weather.wind.deg}° angle`;
-    this.temp.textContent = `Temperature: ${weather.main.temp}`
+    // Convert from Kelvin to Fahrenheit and to Celsius
+    this.temp.textContent = `${(Number(weather.main.temp)- 273.15).toFixed(2) } °C`
   }
 }
