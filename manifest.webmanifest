@@ -1,38 +1,28 @@
 {
   "short_name": "Weather",
-  "name": "Smash it Weather App",
-  "description": "Weather forecast information",
+  "name": "Weather App",
+  "description": "Weather forecast information App" ,
   "icons": [
     {
-      "src": "/images/icons-192.png",
+      "src": "/images/icon-48x48.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "48x48"
     },
     {
-      "src": "/images/icons-512.png",
+      "src": "/images/icon-96x96.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "96x96"
+    },
+    {
+      "src": "/images/icon-128x128.png",
+      "type": "image/png",
+      "sizes": "128x128"
     }
   ],
-  "start_url": "/",
+  "start_url": "/index.html",
   "background_color": "#3367D6",
   "display": "standalone",
+  "orientation": "portrait",
   "scope": "/",
-  "theme_color": "#3367D6",
-  "shortcuts": [
-    {
-      "name": "How's weather today?",
-      "short_name": "Today",
-      "description": "View weather information for today",
-      "url": "/today?source=pwa",
-      "icons": [{ "src": "/images/today.png", "sizes": "192x192" }]
-    },
-    {
-      "name": "How's weather tomorrow?",
-      "short_name": "Tomorrow",
-      "description": "View weather information for tomorrow",
-      "url": "/tomorrow?source=pwa",
-      "icons": [{ "src": "/images/tomorrow.png", "sizes": "192x192" }]
-    }
-  ]
+  "theme_color": "#3367D6"
 }
