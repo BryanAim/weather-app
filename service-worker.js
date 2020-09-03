@@ -1,4 +1,5 @@
 var cacheName = 'weatherPWA-v1';
+const assetsCacheName = 'v1-assets';
 var filesToCache = [
   '/',
   '/index.html',
@@ -42,9 +43,26 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event)=> {
   console.log('Inside the fetch handler:', event.request.url);
   event.respondWith(
-    caches.match(event.request).then((response)=> {
-      return response || fetch(event.request);
-    })
-  );
+    // Open the cache
+    caches.open(assetsCacheName)
+      .then((cache) => {
+        // Look for matching request in the cache
+        return cache.match(event.request)
+          .then((matched) => {
+            // If a match is found return the cached version first
+            if (matched) {
+              return matched;
+            }
+            // Otherwise continue to the network
+            return fetch(event.request)
+              .then((response) => {
+                // Cache the response
+                cache.put(event.request, response.clone());
+                // Return the original response to the page
+                return response;
+              });
+          });
+      })
+ );
   
 })
