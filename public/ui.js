@@ -13,7 +13,7 @@ class UI {
   feed(weather) {
     this.location.textContent = `${weather.name}, ${weather.sys.country}`;
     this.desc.textContent = weather.weather[0].description;
-    this.icon.setAttribute('src',`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`)
+    this.icon.setAttribute('src',`https://openweathermap.org/img/w/${weather.weather[0].icon}.png`)
     this.feelsLike.textContent = `Feels like: ${(Number(weather.main.feels_like)-273.15).toFixed(2)}°C`;
     this.humidity.textContent = `Humidity: ${weather.main.humidity} %`;
     this.wind.textContent = `Wind Speed: ${weather.wind.speed} m/s, at a ${weather.wind.deg}° angle`;
