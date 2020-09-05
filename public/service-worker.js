@@ -6,7 +6,7 @@ var filesToCache = [
   '/public/weather.js',
   '/public/ui.js',
   '/public/local-storage.js',
-  '/public/mages/icons',
+  '/public/images/icons',
   '/public/style/style.css'
 ];
 
