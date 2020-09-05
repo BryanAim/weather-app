@@ -1,15 +1,13 @@
 var cacheName = 'weatherPWA-v1';
 const assetsCacheName = 'v1-assets';
 var filesToCache = [
-  '/',
-  '/index.html',
-  '/app.js',
-  '/weather.js',
-  '/ui.js',
-  '/local-storage.js',
-  '/images/icons',
-  '/style/bootstrap.min.css',
-  '/style/style.css'
+  '/public/index.html',
+  '/public/app.js',
+  '/public/weather.js',
+  '/public/ui.js',
+  '/public/local-storage.js',
+  '/public/mages/icons',
+  '/public/style/style.css'
 ];
 
 

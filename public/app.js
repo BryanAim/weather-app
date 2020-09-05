@@ -15,6 +15,8 @@ const ui = new UI();
 document.addEventListener('DOMContentLoaded', getWeather);
 
 // Change Location Event
+let modal = document.getElementById('open-modal');
+
 document.getElementById('w-change-btn').addEventListener('click', (e) => {
   const city = document.getElementById('city').value;
   const state = document.getElementById('state').value;
@@ -29,8 +31,9 @@ document.getElementById('w-change-btn').addEventListener('click', (e) => {
   // Get and display weather
   getWeather();
 
-  // Close modal
-  $('#locationModal').modal('hide');
+  document.getElementById('city').value = null
+  document.getElementById('state').value = null;
+
 })
 
 
