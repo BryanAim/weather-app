@@ -2,8 +2,8 @@ class Storage {
   constructor() {
     this.long;
     this.lat;
-    this.defaultLong = 0.3031;
-    this.defaultLat = 36.0800;
+    this.defaultLong = 36.7728897;
+    this.defaultLat = -1.2999792;
   }
 
   getLocationData() {

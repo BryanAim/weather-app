@@ -8,11 +8,10 @@ class Weather {
   // Fetch Weather from OpenWeather API
 
   async getWeather() {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=33.441792&lon=-94.037689&
-      exclude=hourly,daily&appid=${this.apiKey}`);
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${this.lat}&lon=${this.long}&appid=${this.apiKey}&units=metric`);
 
     const responseData = await response.json();
-    console.log(responseData.current);
+    // console.log(responseData.current);
     return responseData;
   }
 
