@@ -11,13 +11,13 @@ class UI {
   }
 
   feed(weather) {
-    this.location.textContent = `${weather.name}, ${weather.sys.country}`;
-    this.desc.textContent = weather.weather[0].description;
-    this.icon.setAttribute('src',`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`)
-    this.feelsLike.textContent = `Feels like: ${(Number(weather.main.feels_like)-273.15).toFixed(2)}°C`;
-    this.humidity.textContent = `Humidity: ${weather.main.humidity} %`;
-    this.wind.textContent = `Wind Speed: ${weather.wind.speed} m/s, at a ${weather.wind.deg}° angle`;
+    this.location.textContent = `${weather.lon}, ${weather.lat}`;
+    this.desc.textContent = weather.current.weather[0].description;
+    this.icon.setAttribute('src',`http://openweathermap.org/img/w/${weather.current.weather[0].icon}.png`)
+    this.feelsLike.textContent = `Feels like: ${(Number(weather.current.feels_like)-273.15).toFixed(2)}°C`;
+    this.humidity.textContent = `Humidity: ${weather.current.humidity} %`;
+    this.wind.textContent = `Wind Speed: ${weather.current.wind_speed} m/s`;
     // Convert from Kelvin to Fahrenheit and to Celsius
-    this.temp.textContent = `${(Number(weather.main.temp)- 273.15).toFixed(2) } °C`
+    this.temp.textContent = `${(Number(weather.current.temp)- 273.15).toFixed(2) } °C`
   }
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +9,16 @@
   <link rel="stylesheet" href="./style/bootstrap.min.css">
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#00aba9">
-<meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
 
   <title>Weather App</title>
 </head>
+
 <body>
 
   <div class="container">
@@ -25,7 +27,7 @@
         <h1 id="w-location"></h1>
         <img id="w-icon"> <span id="w-temp" class="h4"></span>
         <h3 id="w-desc" class="text-dark"></h3>
-        
+
         <ul class="list-group mt-3" id="w-details">
           <li id="w-humidity" class="list-group-item"></li>
           <li id="w-feels-like" class="list-group-item"></li>
@@ -34,9 +36,9 @@
         <hr>
 
         <!-- Button trigger modal -->
-<button type="button" class="btn btn-light" data-toggle="modal" data-target="#locationModal">
-  Change Location
-</button>
+        <button type="button" class="btn btn-light" data-toggle="modal" data-target="#locationModal">
+          Change Location
+        </button>
       </div>
     </div>
   </div>
@@ -48,38 +50,38 @@
   </div> -->
 
   <!-- Modal -->
-<div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="locationModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="locationModalLabel">Choose Location</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
+  <div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="locationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="locationModalLabel">Choose Location</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
 
-        <form id="w-form">
-          <div class="form-group">
-            <label for="city">City</label>
-            <input type="text" id="city" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="state">Country</label>
-            <input type="text" id="state" class="form-control" placeholder="Optional">
-          </div>
-        </form>
+          <form id="w-form">
+            <div class="form-group">
+              <label for="long">Longitude</label>
+              <input type="text" id="long" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="lat">Country</label>
+              <input type="text" id="lat" class="form-control" placeholder="Optional">
+            </div>
+          </form>
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" id="w-change-btn" class="btn btn-primary">Change Location</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" id="w-change-btn" class="btn btn-primary">Change Location</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
- 
-  
+
+
   <script src="./style/jquery-3.5.1.slim.min.js"></script>
   <script src="./style/popper.min.js"></script>
   <script src="./style/jquery-3.5.1.slim.min.js"></script>
@@ -93,13 +95,14 @@
   <!-- FIREBASE SCRIPTS -->
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="/__/firebase/7.19.1/firebase-app.js"></script>
+  <script src="/__/firebase/7.19.1/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
+  <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="/__/firebase/7.19.1/firebase-analytics.js"></script>
+  <script src="/__/firebase/7.19.1/firebase-analytics.js"></script>
 
-<!-- Initialize Firebase -->
-<script src="/__/firebase/init.js"></script>
+  <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
 </body>
+
 </html>

@@ -1,33 +1,33 @@
 class Storage {
   constructor() {
-    this.city;
-    this.state;
-    this.defaultCity = 'Nakuru';
-    this.defaultState = 'Ke';
+    this.long;
+    this.lat;
+    this.defaultLong = 0.3031;
+    this.defaultLat = 36.0800;
   }
 
   getLocationData() {
-    if (localStorage.getItem('city')=== null) {
-      this.city = this.defaultCity;
+    if (localStorage.getItem('long') === null) {
+      this.long = this.defaultLong;
     } else {
-      this.city = localStorage.getItem('city');
+      this.long = localStorage.getItem('long');
     }
 
-    if (localStorage.getItem('state')=== null) {
-      this.state = this.defaultState;
+    if (localStorage.getItem('lat') === null) {
+      this.lat = this.defaultLat;
     } else {
-      this.state = localStorage.getItem('state');
+      this.lat = localStorage.getItem('lat');
     }
 
     return {
-      city: this.city,
-      state: this.state
+      long: this.long,
+      lat: this.lat
     }
 
   }
 
-  setLocationData(city, state) {
-    localStorage.setItem('city', city);
-    localStorage.setItem('state', state);
+  setLocationData(long, lat) {
+    localStorage.setItem('long', long);
+    localStorage.setItem('lat', lat);
   }
 }
