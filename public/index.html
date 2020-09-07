@@ -30,7 +30,7 @@
           <img id="w-icon"> <span id="w-temp" class="h4"></span>
           <h3 id="w-desc" class="text-dark"></h3>
           <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          <button id="change-loc" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             Change Location</button>
         </div>
       </div>
@@ -40,7 +40,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Enter Longitude and latitude values</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -97,7 +97,7 @@
         <div class="col">
           <div class="cards p-3 border bg-light">
             <!-- CARDS -->
-            <div class="card" style="width: 8rem;">
+            <div id="card" class="card" style="width: 8rem;">
               <div id="day-2" class="card-header">
 
               </div>
@@ -107,7 +107,7 @@
               </div>
             </div>
 
-            <div class="card" style="width: 8rem;">
+            <div id="card" class="card" style="width: 8rem;">
               <div id="day-3" class="card-header">
 
               </div>
@@ -117,7 +117,7 @@
               </div>
             </div>
 
-            <div class="card" style="width: 8rem;">
+            <div id="card" class="card" style="width: 8rem;">
               <div id="day-4" class="card-header">
 
               </div>
@@ -126,7 +126,7 @@
                 <p id="desc-d4" class="card-text"></p>
               </div>
             </div>
-            <div class="card" style="width: 8rem;">
+            <div id="card" class="card" style="width: 8rem;">
               <div id="day-5" class="card-header">
 
               </div>
