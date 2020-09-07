@@ -8,82 +8,111 @@
   <link rel="stylesheet" href="./style/bootstrap.min.css">
   <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#00aba9">
-<meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
 
   <title>Weather App</title>
 </head>
-<body>
+<body id="main">
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 mx-auto text-center bg-primary mt-5 p-5 rounded">
-        <h1 id="w-location"></h1>
-        <img id="w-icon"> <span id="w-temp" class="h4"></span>
-        <h3 id="w-desc" class="text-dark"></h3>
-        
-        <ul class="list-group mt-3" id="w-details">
-          <li id="w-humidity" class="list-group-item"></li>
-          <li id="w-feels-like" class="list-group-item"></li>
-          <li id="w-wind" class="list-group-item"></li>
-        </ul>
-        <hr>
+  <div class="container overflow-hidden">
+    <div class="row gx-1 gy-1">
+      <div class="col">
+        <div class="p-3 border bg-light">
+          <h2 id="w-location"></h2>
+          <img id="w-icon"> <span id="w-temp" class="h4"></span>
+          <h3 id="w-desc" class="text-dark">
 
-        <!-- Button trigger modal -->
-<button type="button" class="btn btn-light" data-toggle="modal" data-target="#locationModal">
-  Change Location
-</button>
+          </h3>
+          <h6 class="small">Last fetched</h6>
+          <h6 class="small" id="w-date"></h6>
+          <!-- Button trigger modal -->
+          <button id="change-loc" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Change Location</button>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Enter City and/Or State</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="w-form">
+                <div class="form-group">
+                  <label for="state">City</label>
+                  <input type="text" id="city" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="state">State</label>
+                  <input type="text" id="state" class="form-control" placeholder="Optional">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" id="w-change-btn" class="btn btn-primary" data-dismiss="modal">Change</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table Side -->
+      <div class="col">
+        <div class="p-3 border bg-light">
+          <table class="table">
+            <tr>
+              <th>Condition</th>
+              <th>Value</th>
+            </tr>
+            <tr>
+              <td>FEELS LIKE</td>
+              <td id="w-feels-like"></td>
+            </tr>
+            <tr>
+              <td>HUMIDITY</td>
+              <td id="w-humidity"></td>
+            </tr>
+            <tr>
+              <td>WIND</td>
+              <td id="w-wind"></td>
+            </tr>
+            <tr>
+              <td>DEW POINT</td>
+              <td id="w-dew-point"></td>
+            </tr>
+          </table>
+
+        </div>
+      </div>
+      <div class="row gx-3 gy-2">
+        <div class="col">
+          <div class="cards p-3 border bg-light">
+            <div class="week-container">
+              <ul class="week-list">
+                  <li class="active"><i class="day-icon" data-feather="sun"></i><span class="day-name">Tue</span><span class="day-temp">29°C</span></li>
+                  <li><i class="day-icon" data-feather="cloud"></i><span class="day-name">Wed</span><span class="day-temp">21°C</span></li>
+                  <li><i class="day-icon" data-feather="cloud-snow"></i><span class="day-name">Thu</span><span class="day-temp">08°C</span></li>
+                  <li><i class="day-icon" data-feather="cloud-rain"></i><span class="day-name">Fry</span><span class="day-temp">19°C</span></li>
+                  <div class="clear"></div>
+              </ul>
+          </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- <div class="loader">
-    <svg viewBox="0 0 32 32" width="32" height="32">
-      <circle id="ud811Spinner" cx="16" cy="16" r="14" fill="none"></circle>
-    </svg>
-  </div> -->
-
-  <!-- Modal -->
-<div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="locationModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="locationModalLabel">Choose Location</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <form id="w-form">
-          <div class="form-group">
-            <label for="city">City</label>
-            <input type="text" id="city" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="state">State</label>
-            <input type="text" id="state" class="form-control" placeholder="Optional">
-          </div>
-        </form>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" id="w-change-btn" class="btn btn-primary">Change Location</button>
-      </div>
-    </div>
-  </div>
-</div>
- 
-  
-  <script src="./style/jquery-3.5.1.slim.min.js"></script>
-  <script src="./style/popper.min.js"></script>
-  <script src="./style/jquery-3.5.1.slim.min.js"></script>
-  <script src="./style/bootstrap.min.js"></script>
+  <script src="./style/bootstrap.bundle.min.js"></script>
   <script src="local-storage.js"></script>
   <script src="weather.js"></script>
   <script src="ui.js"></script>
@@ -93,13 +122,13 @@
   <!-- FIREBASE SCRIPTS -->
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="/__/firebase/7.19.1/firebase-app.js"></script>
+  <script src="/__/firebase/7.19.1/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
+  <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="/__/firebase/7.19.1/firebase-analytics.js"></script>
+  <script src="/__/firebase/7.19.1/firebase-analytics.js"></script>
 
-<!-- Initialize Firebase -->
-<script src="/__/firebase/init.js"></script>
+  <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
 </body>
 </html>
