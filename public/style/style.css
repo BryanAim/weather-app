@@ -78,3 +78,10 @@ body {
     -webkit-transform: rotate(90deg);
             transform: rotate(90deg); } 
           }
+
+          .cards { 
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            
+          }

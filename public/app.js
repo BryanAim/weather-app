@@ -29,11 +29,7 @@ document.getElementById('w-change-btn').addEventListener('click', (e) => {
   // Get and display weather
   getWeather();
 
-  // Close modal
-  $('#locationModal').modal('hide');
 })
-
-
 
 function getWeather() {
   weather.getWeather()
