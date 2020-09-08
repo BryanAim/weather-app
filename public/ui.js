@@ -23,7 +23,7 @@ class UI {
     this.d4temp      = document.getElementById('w-d4temp');
     this.d5temp      = document.getElementById('w-d5temp');
     this.wind      = document.getElementById('w-wind');
-    this.lastFetched = document.getElementById('last-fetched');
+    this.lastFetched = document.getElementById('w-last-fetched');
   }
 
   feed(weather) {
