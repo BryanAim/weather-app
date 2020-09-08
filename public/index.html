@@ -7,29 +7,29 @@
   <link rel="stylesheet" href="./style/style.css">
   <link rel="stylesheet" href="./style/bootstrap.min.css">
   <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="apple-touch-icon" sizes="180x180" href="/public/images/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16x16.png">
+  <link rel="manifest" href="./site.webmanifest">
+  <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#00aba9">
   <meta name="theme-color" content="#ffffff">
 
-  <title>Weather App</title>
+  <title>WeatherNow</title>
 </head>
 <body id="main">
 
-  <div class="container overflow-hidden">
+  <div id="color-overlay" class="container overflow-hidden">
     <div class="row gx-1 gy-1">
       <div class="col">
         <div class="p-3 border bg-light">
           <h2 id="w-location"></h2>
+          <h3 id="w-day"></h3>
+          <h4 class="h4" id="w-date"></h4>
           <img id="w-icon"> <span id="w-temp" class="h4"></span>
           <h3 id="w-desc" class="text-dark">
 
           </h3>
-          <h6 class="small">Last fetched</h6>
-          <h6 class="small" id="w-date"></h6>
           <!-- Button trigger modal -->
           <button id="change-loc" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             Change Location</button>
@@ -87,8 +87,8 @@
               <td id="w-wind"></td>
             </tr>
             <tr>
-              <td>DEW POINT</td>
-              <td id="w-dew-point"></td>
+              <td>LAST FETCHED</td>
+              <td id="w-last-fetched"></td>
             </tr>
           </table>
 
@@ -99,10 +99,26 @@
           <div class="cards p-3 border bg-light">
             <div class="week-container">
               <ul class="week-list">
-                  <li class="active"><i class="day-icon" data-feather="sun"></i><span class="day-name">Tue</span><span class="day-temp">29°C</span></li>
-                  <li><i class="day-icon" data-feather="cloud"></i><span class="day-name">Wed</span><span class="day-temp">21°C</span></li>
-                  <li><i class="day-icon" data-feather="cloud-snow"></i><span class="day-name">Thu</span><span class="day-temp">08°C</span></li>
-                  <li><i class="day-icon" data-feather="cloud-rain"></i><span class="day-name">Fry</span><span class="day-temp">19°C</span></li>
+                  <li class="active">
+                    <img id="w-d2icon" class="day-icon">
+                    <span id="w-day2date" class="day-name"></span>
+                    <span id="w-d2temp" class="day-temp"></span></li>
+
+                  <li>
+                    <img id="w-d3icon" class="day-icon">
+                    <span id="w-day3date" class="day-name"></span>
+                    <span id="w-d3temp" class="day-temp"></span></li>
+
+
+                  <li>
+                    <img id="w-d4icon" class="day-icon">
+                    <span id="w-day4date" class="day-name"></span>
+                    <span id="w-d4temp" class="day-temp"></span></li>
+
+                  <li>
+                    <img id="w-d5icon" class="day-icon">
+                    <span id="w-day5date" class="day-name"></span>
+                    <span id="w-d5temp" class="day-temp"></span></li>
                   <div class="clear"></div>
               </ul>
           </div>
@@ -111,7 +127,7 @@
       </div>
     </div>
   </div>
-
+  <script type="text/javascript" src="./live.js"></script>
   <script src="./style/bootstrap.bundle.min.js"></script>
   <script src="local-storage.js"></script>
   <script src="weather.js"></script>
