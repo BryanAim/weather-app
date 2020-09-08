@@ -71,11 +71,11 @@ class UI {
     this.location.textContent = `${weather.city.name}, ${weather.city.country}`;
     this.desc.textContent = weather.list[0].weather[0].description;
 
-    this.icon.setAttribute('src',`http://openweathermap.org/img/w/${weather.list[0].weather[0].icon}.png`);
-    this.d2icon.setAttribute('src',`http://openweathermap.org/img/w/${weather.list[3].weather[0].icon}.png`);
-    this.d3icon.setAttribute('src',`http://openweathermap.org/img/w/${weather.list[11].weather[0].icon}.png`);
-    this.d4icon.setAttribute('src',`http://openweathermap.org/img/w/${weather.list[19].weather[0].icon}.png`);
-    this.d5icon.setAttribute('src',`http://openweathermap.org/img/w/${weather.list[27].weather[0].icon}.png`);
+    this.icon.setAttribute('src',`https://openweathermap.org/img/w/${weather.list[0].weather[0].icon}.png`);
+    this.d2icon.setAttribute('src',`https://openweathermap.org/img/w/${weather.list[3].weather[0].icon}.png`);
+    this.d3icon.setAttribute('src',`https://openweathermap.org/img/w/${weather.list[11].weather[0].icon}.png`);
+    this.d4icon.setAttribute('src',`https://openweathermap.org/img/w/${weather.list[19].weather[0].icon}.png`);
+    this.d5icon.setAttribute('src',`https://openweathermap.org/img/w/${weather.list[27].weather[0].icon}.png`);
     this.feelsLike.textContent = `${weather.list[0].main.feels_like}°C`;
     this.humidity.textContent = `${weather.list[0].main.humidity} %`;
     this.wind.textContent = `${weather.list[0].wind.speed} m/s`;
