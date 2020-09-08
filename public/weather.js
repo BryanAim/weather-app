@@ -8,7 +8,7 @@ class Weather {
     // Fetch Weather from OpenWeather API
 
     async getWeather() {
-      const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.city},${this.state}&appid=${this.apiKey}`);
+      const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${this.city},${this.state}&units=metric&appid=${this.apiKey}`);
 
       const responseData = await response.json();
 

@@ -6,92 +6,143 @@
   <!-- Styles -->
   <link rel="stylesheet" href="./style/style.css">
   <!-- Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="./images/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-<link rel="manifest" href="./site.webmanifest">
-<link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#00aba9">
-<meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="/public/images/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16x16.png">
+  <link rel="manifest" href="./site.webmanifest">
+  <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
 
   <title>WeatherNow</title>
 </head>
-<body>
+<body id="main">
 
-<div class="container">
-  <div class="weather-side">
-      <div class="weather-gradient"></div>
-      <div class="date-container">
-          <h2 class="date-dayname">Tuesday</h2><span class="date-day">15 Jan 2019</span><i class="location-icon" data-feather="map-pin"></i><span id="weather-location"></span></div>
-      <div class="weather-container"><img id="w-icon">
-          <h1 id="w-temp" class="weather-temp"></h1>
-          <h3 id="weather-desc"></h3>
-      </div>
-  </div>
-  <div class="info-side">
-      <div class="today-info-container">
-          <div class="today-info">
-              <div class="precipitation"> <span class="title">FEELS LIKE</span><span id="w-feels-like" class="value"></span>
-                  <div class="clear"></div>
-              </div>
-              <div class="humidity"> <span class="title">HUMIDITY</span><span id="w-humidity" class="value"></span>
-                  <div class="clear"></div>
-              </div>
-              <div class="wind"> <span class="title">WIND</span><span id="w-wind" class="value"></span>
-                  <div class="clear"></div>
-              </div>
-          </div>
-      </div>
-      <div class="week-container">
-          <ul class="week-list">
-              <li class="active"><i class="day-icon" data-feather="sun"></i><span class="day-name">Tue</span><span class="day-temp">29°C</span></li>
-              <li><i class="day-icon" data-feather="cloud"></i><span class="day-name">Wed</span><span class="day-temp">21°C</span></li>
-              <li><i class="day-icon" data-feather="cloud-snow"></i><span class="day-name">Thu</span><span class="day-temp">08°C</span></li>
-              <li><i class="day-icon" data-feather="cloud-rain"></i><span class="day-name">Fry</span><span class="day-temp">19°C</span></li>
-              <div class="clear"></div>
-          </ul>
-      </div>
-      <div class="location-container"><a href="#open-modal"><button class="location-button"> <i data-feather="map-pin"></i>Change location</button></a>
-      
-        <div id="open-modal" class="modal-window">
-          <div>
-            <a href="#" title="Close" class="modal-close">Close</a>
-            <div>
-            <label for="city">City</label>
-            <input type="text" id="city" class="form-control">
-          </div>
+  <div id="color-overlay" class="container overflow-hidden">
+    <div class="row gx-1 gy-1">
+      <div class="col">
+        <div class="p-3 border bg-light">
+          <h2 id="w-location"></h2>
+          <h3 id="w-day"></h3>
+          <h4 class="h4" id="w-date"></h4>
+          <img id="w-icon"> <span id="w-temp" class="h4"></span>
+          <h3 id="w-desc" class="text-dark">
 
-          <div class="form-group">
-            <label for="state">Country</label>
-            <input type="text" id="state" class="form-control" placeholder="Optional">
-            
-            <div  class="location-container">
-              <a href="#"><button id="w-change-btn" class="location-button"> <i data-feather="map-pin"></i>Change location</button></a>
-          </div>
-            </div>
+          </h3>
+          <!-- Button trigger modal -->
+          <button id="change-loc" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Change Location</button>
         </div>
+      </div>
 
-      
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Enter City and/Or State</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="w-form">
+                <div class="form-group">
+                  <label for="state">City</label>
+                  <input type="text" id="city" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="state">State</label>
+                  <input type="text" id="state" class="form-control" placeholder="Optional">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" id="w-change-btn" class="btn btn-primary" data-dismiss="modal">Change</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table Side -->
+      <div class="col">
+        <div class="p-3 border bg-light">
+          <table class="table">
+            <tr>
+              <th>Condition</th>
+              <th>Value</th>
+            </tr>
+            <tr>
+              <td>FEELS LIKE</td>
+              <td id="w-feels-like"></td>
+            </tr>
+            <tr>
+              <td>HUMIDITY</td>
+              <td id="w-humidity"></td>
+            </tr>
+            <tr>
+              <td>WIND</td>
+              <td id="w-wind"></td>
+            </tr>
+            <tr>
+              <td>LAST FETCHED</td>
+              <td id="w-last-fetched"></td>
+            </tr>
+          </table>
+
+        </div>
+      </div>
+      <div class="row gx-3 gy-2">
+        <div class="col">
+          <div class="cards p-3 border bg-light">
+            <div class="week-container">
+              <ul class="week-list">
+                  <li class="active">
+                    <img id="w-d2icon" class="day-icon">
+                    <span id="w-day2date" class="day-name"></span>
+                    <span id="w-d2temp" class="day-temp"></span></li>
+
+                  <li>
+                    <img id="w-d3icon" class="day-icon">
+                    <span id="w-day3date" class="day-name"></span>
+                    <span id="w-d3temp" class="day-temp"></span></li>
+
+
+                  <li>
+                    <img id="w-d4icon" class="day-icon">
+                    <span id="w-day4date" class="day-name"></span>
+                    <span id="w-d4temp" class="day-temp"></span></li>
+
+                  <li>
+                    <img id="w-d5icon" class="day-icon">
+                    <span id="w-day5date" class="day-name"></span>
+                    <span id="w-d5temp" class="day-temp"></span></li>
+                  <div class="clear"></div>
+              </ul>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
- 
-<!-- <script src="https://unpkg.com/feather-icons"></script> -->
-  <script src="./local-storage.js"></script>
-  <script src="./weather.js"></script>
-  <script src="./ui.js"></script>
-  <script src="./app.js"></script>
-  <script src="./register-sw.js"></script>
+  <script src="./style/bootstrap.bundle.min.js"></script>
+  <script src="local-storage.js"></script>
+  <script src="weather.js"></script>
+  <script src="ui.js"></script>
+  <script src="app.js"></script>
+  <script src="register-sw.js"></script>
 
   <!-- FIREBASE SCRIPTS -->
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="/__/firebase/7.19.1/firebase-app.js"></script>
+  <script src="/__/firebase/7.19.1/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
+  <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="/__/firebase/7.19.1/firebase-analytics.js"></script>
+  <script src="/__/firebase/7.19.1/firebase-analytics.js"></script>
 
-<!-- Initialize Firebase -->
-<script src="/__/firebase/init.js"></script>
+  <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
 </body>
 </html>
