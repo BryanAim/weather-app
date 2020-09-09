@@ -5,7 +5,7 @@ const storage = new Storage();
 const weatherLocation = storage.getLocationData();
 
 // Initiate weather object
-const weather = new Weather(weatherLocation.city, weatherLocation.state);
+const weather = new Weather(weatherLocation.city);
 
 // Initiate UI object
 const ui = new UI();
@@ -13,9 +13,7 @@ const ui = new UI();
 // Get weather on DOM Load
 
 document.addEventListener('DOMContentLoaded', getWeather);
-
-// Change Location Event
-let modal = document.getElementById('open-modal');
+localStorage.setItem('city', 'Nakuru');
 
 document.getElementById('w-change-btn').addEventListener('click', (e) => {
   const city = document.getElementById('city').value;
