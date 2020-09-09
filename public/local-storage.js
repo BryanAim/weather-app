@@ -1,7 +1,7 @@
 class Storage {
   constructor() {
     this.city;
-    this.state;
+    // this.state;
     this.defaultCity = 'Nakuru';
     this.defaultState = 'Ke';
   }

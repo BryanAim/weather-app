@@ -24,6 +24,7 @@
       <div class="col">
         <div class="p-3 border bg-light">
           <h2 id="w-location"></h2>
+          <div hidden id="spinner"></div>
           <h3 id="w-day"></h3>
           <h4 class="h4" id="w-date"></h4>
           <img id="w-icon" alt="day icon"> <span id="w-temp" class="h4"></span>
@@ -41,7 +42,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Enter City and/Or State</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Enter City name</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -52,10 +53,10 @@
                   <label for="state">City</label>
                   <input type="text" id="city" class="form-control">
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label for="state">State</label>
                   <input type="text" id="state" class="form-control" placeholder="Optional">
-                </div>
+                </div> -->
               </form>
             </div>
             <div class="modal-footer">
