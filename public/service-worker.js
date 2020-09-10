@@ -7,6 +7,7 @@ var filesToCache = [
   '/public/weather.js',
   '/public/ui.js',
   '/public/local-storage.js',
+  '/public/images/nature-bg.jpg',
   '/public/images/icons',
   '/public/style/bootstrap.min.css',
   '/public/style/bootstrap.bundle.min.js',
@@ -15,12 +16,12 @@ var filesToCache = [
 
 
 self.addEventListener('install', (event) => {
-  console.log('Service worker Registered', event);
+  console.log('[Service worker] Installed', event);
 
   event.waitUntil(
     caches.open(cacheName)
     .then( (cache) => {
-      console.log('[ServiceWorker] Caching app shell');
+      console.log('[ServiceWorker] Caching app shell and content');
       return cache.addAll(filesToCache);
     })
   )
@@ -42,7 +43,7 @@ self.addEventListener('activate', (event) => {
 })
 
 self.addEventListener('fetch', (event)=> {
-  console.log('Inside the fetch handler:', event.request.url);
+  console.log('[Service Worker] Fetching resource: ', event.request.url);
   event.respondWith(
     // Open the cache
     caches.open(assetsCacheName)
