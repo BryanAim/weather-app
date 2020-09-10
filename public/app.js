@@ -39,9 +39,9 @@ document.getElementById('w-change-btn').addEventListener('click', (e) => {
 function getWeather() {
   weather.getWeather()
   .then(result => {
-  console.log(result);
+  // console.log(result);
   ui.feed(result)
 })
-.catch(error=> console.log(error));
+.catch(error=> console.error(error));
 }
 
