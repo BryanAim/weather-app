@@ -16,7 +16,7 @@ class Weather {
         const responseData = await response.json();
       // filter data to display only the 5 day forecast for a specific time
        let dayList = responseData.list.filter(day => {
-        return day.dt_txt.endsWith("12:00:00")
+        return day.dt_txt.endsWith("15:00:00")
       })
 
       if (dayList) {

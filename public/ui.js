@@ -13,6 +13,8 @@ class UI {
     this.d3icon   = document.getElementById('w-d3icon');
     this.d4icon   = document.getElementById('w-d4icon');
     this.d5icon   = document.getElementById('w-d5icon');
+    this.minTemp   = document.getElementById('w-min-temp');
+    this.maxTemp   = document.getElementById('w-max-temp');
 
     this.feelsLike   = document.getElementById('w-feels-like');
     this.humidity    = document.getElementById('w-humidity');
@@ -34,22 +36,16 @@ class UI {
     let monthsArr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     // Convert timestamp to milliseconds
     var date = new Date(dt * 1000);
-    // Year
-    var year = date.getFullYear();
-    // Month
-    var month = monthsArr[date.getMonth()];
-    // Day
-    var day = date.getDate();
-    // Hours
-    var hours = date.getHours();
-    // Minutes
-    var minutes = "0" + date.getMinutes();
-    // Seconds
-    var seconds = "0" + date.getSeconds();
-    // Display date time in MM-dd-yyyy h:m:s format
-    //  var convdataTime = month+'-'+day+'-'+year+' '+hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+
     this.day.textContent = daysArr[date.getDay()]
-    this.date.textContent = `${month}-${day}-${year}`;
+    this.date.textContent = new Date().toLocaleDateString(undefined, {
+      day: '2-digit',
+      month: '2-digit',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+  });
     let d2formattedDate = new Date(Number(`${weather[1].dt}` * 1000));
 
     this.day2date.textContent = shortDaysArr[d2formattedDate.getDay()];
@@ -63,10 +59,12 @@ class UI {
     let d5formattedDate = new Date(Number(`${weather[4].dt}` * 1000));
     this.day5date.textContent = shortDaysArr[d5formattedDate.getDay()];
 
-    this.d2temp.textContent = `${weather[1].main.temp} °C`;
-    this.d3temp.textContent = `${weather[2].main.temp} °C`;
-    this.d4temp.textContent = `${weather[3].main.temp} °C`;
-    this.d5temp.textContent = `${weather[4].main.temp} °C`;
+    this.minTemp.textContent = `${(weather[0].main.temp_min.toFixed(0))} °C`;
+    this.maxTemp.textContent = `${(weather[0].main.temp_max.toFixed(0))} °C`;
+    this.d2temp.textContent = `${(weather[1].main.temp.toFixed(0))} °C`;
+    this.d3temp.textContent = `${(weather[2].main.temp).toFixed(0)} °C`;
+    this.d4temp.textContent = `${(weather[3].main.temp.toFixed(0))} °C`;
+    this.d5temp.textContent = `${(weather[4].main.temp.toFixed(0))} °C`;
     
     let cityName =localStorage.getItem('city');
     this.location.textContent = cityName.charAt(0).toUpperCase() + cityName.substring(1) ;
@@ -77,11 +75,11 @@ class UI {
     this.d3icon.setAttribute('src', `https://openweathermap.org/img/w/${weather[2].weather[0].icon}.png`);
     this.d4icon.setAttribute('src', `https://openweathermap.org/img/w/${weather[3].weather[0].icon}.png`);
     this.d5icon.setAttribute('src', `https://openweathermap.org/img/w/${weather[4].weather[0].icon}.png`);
-    this.feelsLike.textContent = `${weather[0].main.feels_like}°C`;
+    this.feelsLike.textContent = `${(weather[0].main.feels_like).toFixed(0)}°C`;
     this.humidity.textContent = `${weather[0].main.humidity} %`;
     this.wind.textContent = `${weather[0].wind.speed} m/s`;
 
-    this.temp.textContent = `${weather[0].main.temp} °C`
+    this.temp.textContent = `${(weather[0].main.temp).toFixed(0)}°`
     this.lastFetched.textContent = `${weather[0].dt_txt}`
   }
 }

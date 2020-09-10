@@ -22,15 +22,17 @@
   <div id="color-overlay" class="container overflow-hidden">
     <div class="row gx-1 gy-1">
       <div class="col">
-        <div class="p-3 border bg-light">
+        <div class="p-3 border">
           <h2 id="w-location"></h2>
           <div hidden id="spinner"></div>
           <h3 id="w-day"></h3>
-          <h4 class="h4" id="w-date"></h4>
-          <img id="w-icon" alt="day icon"> <span id="w-temp" class="h4"></span>
+          <br>
+          <span id="w-temp" class="h4"></span>
+          <img id="w-icon" alt="day icon"> 
           <h3 id="w-desc" class="text-dark">
 
           </h3>
+          <h6 id="w-date"></h6>
           <!-- Button trigger modal -->
           <button id="change-loc" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             Change Location</button>
@@ -69,11 +71,19 @@
 
       <!-- Table Side -->
       <div class="col">
-        <div class="p-3 border bg-light">
+        <div class="p-3 border">
           <table class="table">
             <tr>
               <th>Condition</th>
               <th>Value</th>
+            </tr>
+            <tr>
+              <td>MIN TEMP</td>
+              <td id="w-min-temp"></td>
+            </tr>
+            <tr>
+              <td>MAX TEMP</td>
+              <td id="w-max-temp"></td>
             </tr>
             <tr>
               <td>FEELS LIKE</td>

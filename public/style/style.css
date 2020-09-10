@@ -5,27 +5,20 @@ html {
   height: 100vh;
   background-color: #222831;
 }
-/* #element-with-background-image {
-	position: relative;
-	background-image: url("//spin.atomicobject.com/wp-content/uploads/20170324102432/portfolio-tips-feature-image.jpg");
-} */
-/* #color-overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: black;
-	opacity: 0.7;
-} */
+#w-temp {
+  font-size: 4em;
+}
 .container {
-  background: linear-gradient( 135deg, #72EDF2 10%, #5151E5 100%);
+  background: linear-gradient( 13deg, rgba(114, 237, 242, 0.52),rgba(81, 81, 229, 0.43)), url('/public/images/nature-bg.jpg');
+  background-size: cover;
   padding: 15px;
   height: 100%;
 }
 
 .p-3,.modal-content {
-  background: linear-gradient( 13deg, #72EDF2 10%, #5151E5 100%);
+  border-radius: 5px;
+  background: linear-gradient( 13deg, rgba(114, 237, 242, 1),rgba(81, 81, 229, 0.53));
+  background-size: cover;
 }
 #change-loc {
   background:#5151E5;
