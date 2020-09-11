@@ -8,7 +8,12 @@ var filesToCache = [
   './local-storage.js',
   './register-sw.js',
   './images/nature-bg.jpg',
-  './images/icons',
+  './images/icons/android-chrome-192x192.png',
+  './images/icons/android-chrome-512x512.png',
+  './images/icons/apple-touch-icon.png',
+  './images/icons/favicon-16x16.png',
+  './images/icons/favicon-32x32.png',
+  './images/icons/favicon.ico',
   './style/bootstrap.min.css',
   './style/bootstrap.bundle.min.js',
   './style/style.css'
