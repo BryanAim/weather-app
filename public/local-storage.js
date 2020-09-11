@@ -3,7 +3,7 @@ class Storage {
     this.city;
     // this.state;
     this.defaultCity = 'Nakuru';
-    this.defaultState = 'Ke';
+    // this.defaultState = 'Ke';
   }
 
   getLocationData() {
