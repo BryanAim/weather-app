@@ -5,7 +5,7 @@ var filesToCache = [
   '/public/app.js',
   '/public/ui.js',
   '/public/local-storage.js',
-  '/public/images/nature-bg.jpg',
+  '/images/nature-bg.jpg',
   '/public/images/icons',
   '/public/style/bootstrap.min.css',
   '/public/style/bootstrap.bundle.min.js',

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,6 +20,7 @@
 
   <title>WeatherNow</title>
 </head>
+
 <body id="main">
 
   <div id="color-overlay" class="container">
@@ -30,11 +32,11 @@
           <h3 id="w-day"></h3>
           <br>
           <span id="w-temp" class="h4"></span>
-          <img id="w-icon" alt="day icon"> 
+          <img id="w-icon" alt="day icon">
           <h3 id="w-desc" class="text-dark">
 
           </h3>
-          <h6 id="w-date"></h6>
+          <h3 id="w-date" class="h6"></h3>
           <!-- Button trigger modal -->
           <button id="change-loc" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             Change Location</button>
@@ -112,29 +114,33 @@
           <div class="cards p-3 border bg-light">
             <div class="week-container">
               <ul class="week-list">
-                  <li class="active">
-                    <img id="w-d2icon" class="day-icon" alt="day 2 icon">
-                    <span id="w-day2date" class="day-name"></span>
-                    <span id="w-d2temp" class="day-temp"></span></li>
+                <li class="active">
+                  <img id="w-d2icon" class="day-icon" alt="day 2 icon">
+                  <span id="w-day2date" class="day-name"></span>
+                  <span id="w-d2temp" class="day-temp"></span>
+                </li>
 
-                  <li>
-                    <img id="w-d3icon" class="day-icon" alt="day 3 icon">
-                    <span id="w-day3date" class="day-name"></span>
-                    <span id="w-d3temp" class="day-temp"></span></li>
+                <li>
+                  <img id="w-d3icon" class="day-icon" alt="day 3 icon">
+                  <span id="w-day3date" class="day-name"></span>
+                  <span id="w-d3temp" class="day-temp"></span>
+                </li>
 
 
-                  <li>
-                    <img id="w-d4icon" class="day-icon" alt="day 4 icon">
-                    <span id="w-day4date" class="day-name"></span>
-                    <span id="w-d4temp" class="day-temp"></span></li>
+                <li>
+                  <img id="w-d4icon" class="day-icon" alt="day 4 icon">
+                  <span id="w-day4date" class="day-name"></span>
+                  <span id="w-d4temp" class="day-temp"></span>
+                </li>
 
-                  <li>
-                    <img id="w-d5icon" class="day-icon" alt="day 5 icon">
-                    <span id="w-day5date" class="day-name"></span>
-                    <span id="w-d5temp" class="day-temp"></span></li>
-                  <div class="clear"></div>
+                <li>
+                  <img id="w-d5icon" class="day-icon" alt="day 5 icon">
+                  <span id="w-day5date" class="day-name"></span>
+                  <span id="w-d5temp" class="day-temp"></span>
+                </li>
+                <div class="clear"></div>
               </ul>
-          </div>
+            </div>
           </div>
         </div>
       </div>
@@ -159,4 +165,5 @@
   <!-- Initialize Firebase -->
   <script src="/__/firebase/init.js"></script>
 </body>
+
 </html>
