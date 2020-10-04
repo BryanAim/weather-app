@@ -32,7 +32,7 @@ self.addEventListener('install', (event) => {
     })
   )
 }) 
-
+// On activate
 self.addEventListener('activate', (event) => {
   console.log('Inside the activate handler:', event);
 
@@ -47,7 +47,7 @@ self.addEventListener('activate', (event) => {
     })
   )
 })
-
+//On fetch
 self.addEventListener('fetch', (event)=> {
   console.log('[Service Worker] Fetching resource: ', event.request.url);
   event.respondWith(
