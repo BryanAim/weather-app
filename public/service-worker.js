@@ -47,7 +47,7 @@ self.addEventListener('activate', (event) => {
     })
   )
 })
-
+//On fetch
 self.addEventListener('fetch', (event)=> {
   console.log('[Service Worker] Fetching resource: ', event.request.url);
   event.respondWith(
