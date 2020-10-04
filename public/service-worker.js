@@ -20,7 +20,7 @@ var filesToCache = [
   './style/style.css'
 ];
 
-
+// On install
 self.addEventListener('install', (event) => {
   console.log('[Service worker] Installed', event);
 
