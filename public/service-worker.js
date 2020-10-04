@@ -1,5 +1,6 @@
 var cacheName = 'weatherPWA-v1';
 const assetsCacheName = 'v1-assets';
+//Files that will be cached
 var filesToCache = [
   './index.html',
   './app.js',
