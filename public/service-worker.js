@@ -32,7 +32,7 @@ self.addEventListener('install', (event) => {
     })
   )
 }) 
-
+// On activate
 self.addEventListener('activate', (event) => {
   console.log('Inside the activate handler:', event);
 
