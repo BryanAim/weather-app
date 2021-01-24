@@ -15,7 +15,6 @@ html {
 }
 .container {
   background: linear-gradient( 13deg, rgba(114, 237, 242, 0.52),rgba(81, 81, 229, 0.43));
-  /* , url('../images/nature-bg.jpg'); */
   background-size: cover;
   padding: 15px;
   height: 100%;
